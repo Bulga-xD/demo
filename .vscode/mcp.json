@@ -1,0 +1,37 @@
+{
+  "servers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    },
+    "jira-local": {
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/.vscode/jira-mcp-server.js"
+      ],
+      "env": {
+        "JIRA_API_TOKEN": "${env:DEMO_JIRA_TOKEN}",
+        "JIRA_HOST": "https://jira.example.com"
+      }
+    },
+    "cycode-scans": {
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/.vscode/cycode-mcp-server.js"
+      ],
+      "type": "stdio"
+    },
+    "confluence-local": {
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/.vscode/confluence-mcp-server.js"
+      ],
+      "env": {
+        "CONFLUENCE_API_TOKEN": "${env:DEMO_CONFLUENCE_TOKEN}",
+        "CONFLUENCE_HOST": "https://confluence.example.com"
+      }
+    }
+  }
+}
